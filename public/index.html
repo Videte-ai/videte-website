@@ -36,19 +36,11 @@
     align-items: flex-start;
   }
 
-  /* logo.jpeg is a composite: logo panel on left half, bg texture on right.
-     Render img at 2× wrapper width so the wrapper crops to the logo only. */
-  .logo-wrap {
-    width: 140px;
-    height: 115px;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-
   .logo-wrap img {
-    width: 280px;
-    max-width: none;
+    height: 168px;
+    width: auto;
     display: block;
+    mix-blend-mode: multiply;
   }
 
   .status-pill {
@@ -71,7 +63,7 @@
   }
 
   .eyebrow {
-    font-size: 0.62rem;
+    font-size: 0.95rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: #8c1f52;
@@ -81,12 +73,16 @@
   .headline {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    font-size: clamp(3rem, 7vw, 6rem);
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
     line-height: 1.0;
     letter-spacing: -0.01em;
     color: #2a1018;
     max-width: 820px;
     margin-bottom: 3.5rem;
+  }
+
+  .headline-sub {
+    font-size: 0.8em;
   }
 
   .headline em {
@@ -153,24 +149,25 @@
   }
 
   .contact-label {
-    font-size: 0.58rem;
+    font-size: 0.7rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #9a7565;
+    color: #6b4040;
   }
 
   .contact-email {
-    font-size: 0.8rem;
+    font-size: 1rem;
     letter-spacing: 0.06em;
     color: #8c1f52;
     text-decoration: none;
-    border-bottom: 0.5px solid rgba(140, 31, 82, 0.3);
-    padding-bottom: 1px;
+    border-bottom: 1px solid rgba(140, 31, 82, 0.5);
+    padding-bottom: 2px;
     transition: border-color 0.2s;
+    font-weight: 400;
   }
 
   .contact-email:hover {
-    border-color: rgba(140, 31, 82, 0.7);
+    border-color: rgba(140, 31, 82, 0.9);
   }
 
   .footer-mark {
@@ -183,8 +180,7 @@
 
   @media (max-width: 600px) {
     body { padding: 2rem 1.75rem; }
-    .logo-wrap { width: 110px; height: 90px; }
-    .logo-wrap img { width: 220px; }
+    .logo-wrap img { height: 160px; }
     .descriptor { grid-template-columns: 1fr; }
     .descriptor-item:nth-child(odd) { border-right: none; padding-right: 0; }
     .descriptor-item:nth-child(even) { padding-left: 0; }
@@ -205,9 +201,8 @@
   <p class="eyebrow">AI-Powered Product Creation</p>
 
   <h1 class="headline">
-    From <em>concept</em><br>
-    to commerce.<br>
-    Built for fashion.
+    From <em>concept</em> to commerce.<br>
+    <span class="headline-sub">Built for <em>fashion</em>.</span>
   </h1>
 
   <div class="divider"></div>
