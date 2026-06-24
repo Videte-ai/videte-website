@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Videte.ai</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0e0d0c;
+    color: #f0ece4;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+    letter-spacing: 0.02em;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #f0ece4;
+  }
+
+  .wordmark span {
+    color: #c9a86c;
+  }
+
+  .status-pill {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #7a7570;
+    border: 0.5px solid #3a3632;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    margin-top: 0.15rem;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 0 3rem;
+  }
+
+  .eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #c9a86c;
+    margin-bottom: 2.5rem;
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: #f0ece4;
+    max-width: 820px;
+    margin-bottom: 3.5rem;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: #c9a86c;
+  }
+
+  .divider {
+    width: 32px;
+    height: 0.5px;
+    background: #c9a86c;
+    margin-bottom: 3rem;
+    opacity: 0.6;
+  }
+
+  .descriptor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 720px;
+    border-top: 0.5px solid #2a2825;
+  }
+
+  .descriptor-item {
+    padding: 1.4rem 0;
+    border-bottom: 0.5px solid #2a2825;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a7570;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .descriptor-item:nth-child(odd) {
+    padding-right: 2rem;
+    border-right: 0.5px solid #2a2825;
+  }
+
+  .descriptor-item:nth-child(even) {
+    padding-left: 2rem;
+  }
+
+  .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #c9a86c;
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .contact-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #4a4742;
+  }
+
+  .contact-email {
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    color: #c9a86c;
+    text-decoration: none;
+    border-bottom: 0.5px solid #c9a86c33;
+    padding-bottom: 1px;
+    transition: border-color 0.2s;
+  }
+
+  .contact-email:hover {
+    border-color: #c9a86c99;
+  }
+
+  .footer-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    color: #3a3632;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 2rem 1.75rem; }
+    .descriptor { grid-template-columns: 1fr; }
+    .descriptor-item:nth-child(odd) { border-right: none; padding-right: 0; }
+    .descriptor-item:nth-child(even) { padding-left: 0; }
+    .footer-mark { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">Videte<span>.</span>ai</div>
+  <div class="status-pill">Coming Soon</div>
+</header>
+
+<main>
+  <p class="eyebrow">AI-Powered Product Creation</p>
+
+  <h1 class="headline">
+    From <em>concept</em><br>
+    to commerce.<br>
+    Built for fashion.
+  </h1>
+
+  <div class="divider"></div>
+
+  <div class="descriptor">
+    <div class="descriptor-item"><span class="dot"></span>Concept & Design Generation</div>
+    <div class="descriptor-item"><span class="dot"></span>Tech Packs</div>
+    <div class="descriptor-item"><span class="dot"></span>Manufacturing Readiness</div>
+    <div class="descriptor-item"><span class="dot"></span>Inventory Intelligence</div>
+  </div>
+</main>
+
+<footer>
+  <div class="contact-block">
+    <span class="contact-label">Contact</span>
+    <a class="contact-email" href="mailto:alex@videte.ai">alex@videte.ai</a>
+  </div>
+  <div class="footer-mark">Videte.ai — 2025</div>
+</footer>
+
+</body>
+</html>
