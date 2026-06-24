@@ -18,8 +18,8 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: #0e0d0c;
-    color: #f0ece4;
+    background: #f5f0e8 url('background.jpg') center center / cover;
+    color: #2a1018;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     min-height: 100vh;
@@ -36,25 +36,27 @@
     align-items: flex-start;
   }
 
-  .wordmark {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #f0ece4;
+  /* logo.jpeg is a composite: logo panel on left half, bg texture on right.
+     Render img at 2× wrapper width so the wrapper crops to the logo only. */
+  .logo-wrap {
+    width: 140px;
+    height: 115px;
+    overflow: hidden;
+    flex-shrink: 0;
   }
 
-  .wordmark span {
-    color: #c9a86c;
+  .logo-wrap img {
+    width: 280px;
+    max-width: none;
+    display: block;
   }
 
   .status-pill {
     font-size: 0.6rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #7a7570;
-    border: 0.5px solid #3a3632;
+    color: #8c1f52;
+    border: 0.5px solid rgba(140, 31, 82, 0.35);
     padding: 0.35rem 0.85rem;
     border-radius: 20px;
     margin-top: 0.15rem;
@@ -72,7 +74,7 @@
     font-size: 0.62rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: #c9a86c;
+    color: #8c1f52;
     margin-bottom: 2.5rem;
   }
 
@@ -82,20 +84,20 @@
     font-size: clamp(3rem, 7vw, 6rem);
     line-height: 1.0;
     letter-spacing: -0.01em;
-    color: #f0ece4;
+    color: #2a1018;
     max-width: 820px;
     margin-bottom: 3.5rem;
   }
 
   .headline em {
     font-style: italic;
-    color: #c9a86c;
+    color: #8c1f52;
   }
 
   .divider {
     width: 32px;
     height: 0.5px;
-    background: #c9a86c;
+    background: #8c1f52;
     margin-bottom: 3rem;
     opacity: 0.6;
   }
@@ -105,16 +107,16 @@
     grid-template-columns: 1fr 1fr;
     gap: 0;
     max-width: 720px;
-    border-top: 0.5px solid #2a2825;
+    border-top: 0.5px solid rgba(42, 16, 24, 0.2);
   }
 
   .descriptor-item {
     padding: 1.4rem 0;
-    border-bottom: 0.5px solid #2a2825;
+    border-bottom: 0.5px solid rgba(42, 16, 24, 0.2);
     font-size: 0.78rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #7a7570;
+    color: #5a3535;
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -122,7 +124,7 @@
 
   .descriptor-item:nth-child(odd) {
     padding-right: 2rem;
-    border-right: 0.5px solid #2a2825;
+    border-right: 0.5px solid rgba(42, 16, 24, 0.2);
   }
 
   .descriptor-item:nth-child(even) {
@@ -133,7 +135,7 @@
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: #c9a86c;
+    background: #8c1f52;
     opacity: 0.5;
     flex-shrink: 0;
   }
@@ -154,33 +156,35 @@
     font-size: 0.58rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #4a4742;
+    color: #9a7565;
   }
 
   .contact-email {
     font-size: 0.8rem;
     letter-spacing: 0.06em;
-    color: #c9a86c;
+    color: #8c1f52;
     text-decoration: none;
-    border-bottom: 0.5px solid #c9a86c33;
+    border-bottom: 0.5px solid rgba(140, 31, 82, 0.3);
     padding-bottom: 1px;
     transition: border-color 0.2s;
   }
 
   .contact-email:hover {
-    border-color: #c9a86c99;
+    border-color: rgba(140, 31, 82, 0.7);
   }
 
   .footer-mark {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.7rem;
     letter-spacing: 0.14em;
-    color: #3a3632;
+    color: #b09888;
     text-transform: uppercase;
   }
 
   @media (max-width: 600px) {
     body { padding: 2rem 1.75rem; }
+    .logo-wrap { width: 110px; height: 90px; }
+    .logo-wrap img { width: 220px; }
     .descriptor { grid-template-columns: 1fr; }
     .descriptor-item:nth-child(odd) { border-right: none; padding-right: 0; }
     .descriptor-item:nth-child(even) { padding-left: 0; }
@@ -191,7 +195,9 @@
 <body>
 
 <header>
-  <div class="wordmark">Videte<span>.</span>ai</div>
+  <div class="logo-wrap">
+    <img src="logo.jpeg" alt="Videte.ai">
+  </div>
   <div class="status-pill">Coming Soon</div>
 </header>
 
@@ -219,7 +225,7 @@
     <span class="contact-label">Contact</span>
     <a class="contact-email" href="mailto:alex@videte.ai">alex@videte.ai</a>
   </div>
-  <div class="footer-mark">Videte.ai — 2025</div>
+  <div class="footer-mark">Videte.ai — 2026</div>
 </footer>
 
 </body>
